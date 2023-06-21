@@ -17,7 +17,7 @@ RUN find "${VENV_DIR}/bin" -maxdepth 1 -type f -exec basename {} \; | cut -d/ -f
 RUN apk del --no-cache build-base
 RUN pip uninstall -y pip setuptools
 RUN find "${VENV_DIR}/bin" -name '*ctivate*' -type f -maxdepth 1 -exec rm -f {} \;
-RUN diff /tmp/bin-before.txt /tmp/bin-after.txt | grep -E '^\+' | grep -v -E '^\+\+\+' | sed -E 's/^\+//' | grep 'csv' >/supported-commands.txt
+RUN diff /tmp/bin-before.txt /tmp/bin-after.txt | grep -E '^\+' | grep -v -E '^\+\+\+' | sed -E 's/^\+//' | grep 'csv' | sort >/supported-commands.txt
 RUN rm -f /tmp/bin-*.txt
 
 ###
