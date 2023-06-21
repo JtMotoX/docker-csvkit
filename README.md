@@ -1,6 +1,6 @@
 # docker-csvkit
 
-This is a lightweight (~60mb compressed) Docker image that will convert files to/from xlsx, csv, sql, json, etc.. using [csvkit](https://csvkit.readthedocs.io/en/latest/#why-csvkit).
+This is a lightweight (~35mb compressed) Docker image that will convert files to/from xlsx, csv, sql, json, etc.. using [csvkit](https://csvkit.readthedocs.io/en/latest/#why-csvkit).
 
 ---
 
