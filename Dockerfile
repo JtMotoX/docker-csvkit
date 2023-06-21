@@ -26,5 +26,6 @@ FROM base_image as final_image
 RUN apk add --no-cache jq
 COPY --from=builder_image "${VENV_DIR}" "${VENV_DIR}"
 COPY --from=builder_image /supported-commands.txt /supported-commands.txt
+RUN in2csv --version
 WORKDIR /data
 CMD [ "sh", "-c", "echo 'Supported Commands:'; cat /supported-commands.txt | sed 's/^/\t/'" ]
